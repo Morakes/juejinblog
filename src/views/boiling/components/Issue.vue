@@ -1,22 +1,39 @@
 <template>
   <div class="issue-box">
     <div>
-      <el-input type="textarea" id="areaInput" v-model="textValue" :autosize="{ minRows: 3 }" placeholder="快和拾荒者们一起分享新鲜事吧 ~.~">
+      <el-input
+        type="textarea"
+        id="areaInput"
+        v-model="textValue"
+        :autosize="{ minRows: 3 }"
+        placeholder="快和拾荒者们一起分享新鲜事吧 ~.~"
+      >
       </el-input>
       <div class="topic-warpper">
         <!-- choose topic -->
         <moments-pop>
           <template #default>
-            <span class="new-topic"><i class="fa fa-dot-circle-o icon"></i>请选择圈子</span>
+            <span class="new-topic"
+              ><i class="fa fa-dot-circle-o icon"></i>请选择圈子</span
+            >
           </template>
         </moments-pop>
 
         <!-- choose image -->
         <div class="topic-upload hideUpload">
-          <upload-list :size="uploadSize" :max-length="9" v-model:files="fileList"></upload-list>
+          <upload-list
+            :size="uploadSize"
+            :max-length="9"
+            v-model:files="fileList"
+          ></upload-list>
         </div>
 
-        <div class="topic-counter" :class="[textValue.length > 1000 ? 'topic-counter-warning' : '']">{{ textValue.length }}/1000</div>
+        <div
+          class="topic-counter"
+          :class="[textValue.length > 1000 ? 'topic-counter-warning' : '']"
+        >
+          {{ textValue.length }}/1000
+        </div>
       </div>
     </div>
     <div class="footer">
@@ -27,7 +44,14 @@
           </template>
         </emoji-pop>
         <span @click="eventDelegation">
-          <i class="fa fa-picture-o"></i> 图片 <input type="file" id="uploadInput" ref="dom" @change="changeInput" style="display: none" />
+          <i class="fa fa-picture-o"></i> 图片
+          <input
+            type="file"
+            id="uploadInput"
+            ref="dom"
+            @change="changeInput"
+            style="display: none"
+          />
         </span>
         <link-pop>
           <template #default>
@@ -48,41 +72,41 @@
 </template>
 
 <script lang="ts" setup>
-import UploadList from "@/components/upload/UploadList.vue"
-import MomentsPop from "./MomentsPop.vue"
-import EmojiPop from "./EmojiPop.vue"
-import TopicPop from "./TopicPop.vue"
-import LinkPop from "./LinkPop.vue"
-import { ref, reactive, computed } from "vue"
-import { FilesType } from "@/typings/components"
+import UploadList from "@/components/upload/UploadList.vue";
+import MomentsPop from "./MomentsPop.vue";
+import EmojiPop from "./EmojiPop.vue";
+import TopicPop from "./TopicPop.vue";
+import LinkPop from "./LinkPop.vue";
+import { ref, reactive, computed } from "vue";
+import { FilesType } from "@/typings/components";
 
-const dom = ref()
-const textValue = ref("")
+const dom = ref();
+const textValue = ref("");
 const uploadSize = reactive({
   width: "80px",
   height: "80px",
-})
+});
 const hide = computed(() => {
-  return fileList.value.length > 0 ? "block" : "none"
-})
-const fileList = ref<Array<FilesType>>([])
+  return fileList.value.length > 0 ? "block" : "none";
+});
+const fileList = ref<Array<FilesType>>([]);
 
 const eventDelegation = () => {
-  dom.value.click()
-}
+  dom.value.click();
+};
 const changeInput = () => {
   if (!dom.value.files[0]) {
-    return
+    return;
   }
   const blob = new Blob([dom.value.files[0]], {
     type: "image/png",
-  })
-  let url = URL.createObjectURL(blob)
-  fileList.value.push({ url: url, status: "ready", uid: 2 })
-}
+  });
+  let url = URL.createObjectURL(blob);
+  fileList.value.push({ url: url, status: "ready", uid: 2 });
+};
 const getEmoji = (data) => {
-  textValue.value += data
-}
+  textValue.value += data;
+};
 const getTopic = (data) => {
   // const span = document.createElement("span")
   // const text = document.createTextNode(data)
@@ -93,8 +117,8 @@ const getTopic = (data) => {
   // areaInput?.appendChild(span)
   // span.appendChild(text)
   // span.appendChild(text)
-  textValue.value += data
-}
+  textValue.value += data;
+};
 </script>
 <style lang="scss" scoped>
 .issue-box {

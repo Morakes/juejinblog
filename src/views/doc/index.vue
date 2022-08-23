@@ -8,7 +8,14 @@
     <!-- drag -->
 
     <div class="drag">
-      <div draggable="true" class="drag-box" v-for="(item, key, index) in typeList" :data-type="key" @dragstart="drag.start" @dragend="drag.end">
+      <div
+        draggable="true"
+        class="drag-box"
+        v-for="(item, key, index) in typeList"
+        :data-type="key"
+        @dragstart="drag.start"
+        @dragend="drag.end"
+      >
         <i :class="item.icon"></i>
         <div>{{ item.name }}</div>
       </div>
@@ -18,7 +25,13 @@
 
     <div class="drop">
       <div class="title">可drop区域</div>
-      <div class="view-box" @drop="drop" @dragenter="drag.enter" @dragover="drag.over" @dragleave="drag.leave"></div>
+      <div
+        class="view-box"
+        @drop="drop"
+        @dragenter="drag.enter"
+        @dragover="drag.over"
+        @dragleave="drag.leave"
+      ></div>
     </div>
   </div>
 </template>
@@ -90,7 +103,9 @@ const drag = reactive({
   end: (e) => {
     e.target.style.border = "none"
   },
-  enter: () => {},
+  enter: (e) => {
+    console.log(e.dataTransfer.files[0])
+  },
   over: (e) => {
     e.preventDefault()
   },

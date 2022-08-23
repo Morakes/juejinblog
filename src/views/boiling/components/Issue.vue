@@ -48,11 +48,6 @@
 </template>
 
 <script lang="ts" setup>
-import UploadList from "@/components/upload/UploadList.vue"
-import MomentsPop from "./MomentsPop.vue"
-import EmojiPop from "./EmojiPop.vue"
-import TopicPop from "./TopicPop.vue"
-import LinkPop from "./LinkPop.vue"
 import { ref, reactive, computed } from "vue"
 import { FilesType } from "@/typings/components"
 

@@ -5,8 +5,8 @@ import NProgress from 'nprogress'
 import qs from 'qs'
 
 // 设置请求头和请求路径
-axios.defaults.baseURL ='/api'
-axios.defaults.timeout =10000
+axios.defaults.baseURL = '/api'
+axios.defaults.timeout = 10000
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8'
 axios.interceptors.request.use(
   (config) => {

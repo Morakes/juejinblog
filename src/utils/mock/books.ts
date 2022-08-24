@@ -1,4 +1,4 @@
-export const list = [
+export const list=[
   {
     preSalt: true,
     title: '秒杀系统设计精要',

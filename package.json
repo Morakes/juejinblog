@@ -7,7 +7,14 @@
     "serve": "vite preview",
     "lint": "eslint src --fix",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx "
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": "yarn run lint-staged:js",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@element-plus/icons": "^0.0.11",
@@ -42,12 +49,5 @@
     "vite": "^2.6.4",
     "vue-tsc": "^0.3.0",
     "husky": "^8.0.0"
-  },
-  "lint-staged": {
-    "src/**/*.{ts,js,vue,tsx,jsx}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ]
   }
 }

@@ -42,5 +42,12 @@
     "vite": "^2.6.4",
     "vue-tsc": "^0.3.0",
     "husky": "^8.0.0"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,js,vue,tsx,jsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }

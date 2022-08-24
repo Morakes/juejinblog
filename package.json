@@ -11,6 +11,7 @@
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx "
   },
   "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": "yarn run lint-staged:js",
     "**/*.{js,jsx,tsx,ts,less,md,json}": [
       "prettier --write"
     ]

@@ -2,14 +2,21 @@
   <div class="nav">
     <div class="nav-box">
       <ul>
-        <li v-for="item in list" @click="changeActive(item)" :class="{ active: active == item ? true : false }">{{ item }}</li>
+        <li
+          v-for="(item, index) in list"
+          :key="index"
+          @click="changeActive(item)"
+          :class="{ active: active == item ? true : false }"
+        >
+          {{ item }}
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue"
+  import { ref } from 'vue'
 const list = ref(["推荐", "关注", "后端", "前端", "Android", "IOS", "uniapp", "人工智能"])
 const active = ref("推荐")
 const changeActive = (item: string) => {

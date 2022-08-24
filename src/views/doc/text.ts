@@ -1,3 +1,1 @@
-export class editor{
-    
-}
+export class editor {}

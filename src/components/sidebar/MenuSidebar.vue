@@ -32,53 +32,53 @@
 </template>
 
 <script lang="ts" setup>
-const handleOpen = (index, e) => {
-  console.log(index, e)
-}
+  const handleOpen = (index, e) => {
+    console.log(index, e)
+  }
 </script>
 <style lang="scss" scoped>
-.boiling-box {
-  background: white;
-  box-sizing: border-box;
-  position: fixed;
-  .nav {
-    padding: 10px 0;
-    :deep(.el-menu) {
-      width: 180px;
-      border-right-width: 0;
-    }
-    :deep(.el-icon-arrow-down:before) {
-      content: "";
-    }
-    :deep(.el-sub-menu) {
-      margin-top: 3px;
-    }
-    :deep(.el-sub-menu .el-menu-item) {
-      font-size: 14px;
-      color: #8a919f;
-      min-width: 0px;
-      padding-left: 40px !important;
-      overflow: hidden;
-    }
-    :deep(.el-sub-menu__title) {
-      font-size: 17px;
-      height: 40px;
-      line-height: 40px;
-      padding: 0px 10px !important;
-      margin: 0px 10px;
-    }
-    :deep(.el-menu-item) {
-      font-size: 16px;
-      margin: 3px 10px 0px 10px;
-      height: 40px;
-      line-height: 40px;
-      padding: 0px 10px !important;
-    }
-    :deep(.el-menu-item.is-active) {
-      background: #eaf2ff;
-      color: #1e80ff;
-      border-radius: 5px;
+  .boiling-box {
+    background: white;
+    box-sizing: border-box;
+    position: fixed;
+    .nav {
+      padding: 10px 0;
+      :deep(.el-menu) {
+        width: 180px;
+        border-right-width: 0;
+      }
+      :deep(.el-icon-arrow-down:before) {
+        content: '';
+      }
+      :deep(.el-sub-menu) {
+        margin-top: 3px;
+      }
+      :deep(.el-sub-menu .el-menu-item) {
+        font-size: 14px;
+        color: #8a919f;
+        min-width: 0px;
+        padding-left: 40px !important;
+        overflow: hidden;
+      }
+      :deep(.el-sub-menu__title) {
+        font-size: 17px;
+        height: 40px;
+        line-height: 40px;
+        padding: 0px 10px !important;
+        margin: 0px 10px;
+      }
+      :deep(.el-menu-item) {
+        font-size: 16px;
+        margin: 3px 10px 0px 10px;
+        height: 40px;
+        line-height: 40px;
+        padding: 0px 10px !important;
+      }
+      :deep(.el-menu-item.is-active) {
+        background: #eaf2ff;
+        color: #1e80ff;
+        border-radius: 5px;
+      }
     }
   }
-}
 </style>

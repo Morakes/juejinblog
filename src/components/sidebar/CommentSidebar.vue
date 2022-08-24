@@ -1,9 +1,9 @@
 <template>
   <div class="contanier">
     <div class="icon" v-for="(item, index) in list" :key="index">
-      <el-badge :value="item.value" class="item" type="primary" :hidden="item.hidden"
-        ><el-button round circle @mouseenter.native="mouseenter(item)" @mouseleave.native="mounseleave(item)"
-          ><img :src="item.icon" /></el-button
+      <el-badge :value="item.value" class="item" type="primary" :hidden="item.hidden">
+        <el-button round circle @mouseenter.native="mouseenter(item)" @mouseleave.native="mounseleave(item)">
+          <img :src="item.icon" /></el-button
       ></el-badge>
     </div>
 
@@ -65,7 +65,7 @@
     }
   ])
 
-  const mouseenter = (item: typeof list.value[0] | typeof fixed.value[0])=>{
+  const mouseenter = (item: typeof list.value[0] | typeof fixed.value[0]) => {
     item.icon = item.selectedIcon
   }
   const mounseleave = (item: typeof list.value[0] | typeof fixed.value[0]) => {

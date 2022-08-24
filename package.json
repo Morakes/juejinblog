@@ -7,7 +7,7 @@
     "serve": "vite preview",
     "lint": "eslint src --fix",
     "prepare": "husky install",
-    "lint-staged": "lint-staged",
+    "lint-staged": "lint-staged --allow-empty",
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx "
   },
   "lint-staged": {

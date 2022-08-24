@@ -6,7 +6,7 @@ for (const item in moduleRouter) {
   routerArray.push(moduleRouter[item].route)
 }
 
-export const router = createRouter({
+export const router =createRouter({
   history: createWebHashHistory(),
   routes: [
     {

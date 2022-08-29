@@ -6,9 +6,9 @@
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "lint": "eslint src --fix",
-    "prepare": "husky install",
     "lint-staged": "lint-staged --allow-empty",
-    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx "
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": "yarn run lint-staged:js",
